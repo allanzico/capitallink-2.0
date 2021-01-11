@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TransactionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/transactions', function () {
-    return view('admin.transactions.index');
-})->name('admin.transactions.index');
+
+Route::get('transactions', [TransactionsController::class, 'index'])->name('transactions.index')->middleware('auth');

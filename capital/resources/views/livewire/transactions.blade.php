@@ -48,9 +48,10 @@
                             <td class="border px-4 py-2">{{ number_format($transaction->amount, 2) }}</td>
                             <td class="border px-4 py-2">{{ $transaction->status ? 'Active' : 'Not-Active' }}</td>
                             <td class="border px-4 py-2">Edit
-                                <x-jet-danger-button wire:click="confirmTransactionDeletion({{ $transaction->id }})" wire:loading.attr="disabled">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-900 " wire:click="confirmTransactionDeletion({{ $transaction->id }})">{{ __('Delete') }}</a>
+                                {{-- <x-jet-danger-button wire:click="confirmTransactionDeletion({{ $transaction->id }})" wire:loading.attr="disabled">
                                     {{ __('Delete') }}
-                                </x-jet-danger-button>
+                                </x-jet-danger-button> --}}
                             </td>
                         </tr>
                     @endforeach

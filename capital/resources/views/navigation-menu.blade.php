@@ -17,7 +17,7 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('admin.transactions.index') }}" :active="request()->routeIs('transactions.index')">
+                    <x-jet-nav-link href="{{ route('transactions.index') }}" :active="request()->routeIs('transactions.index')">
                         {{ __('Transactions') }}
                     </x-jet-nav-link>
                 </div>
@@ -147,7 +147,7 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('admin.transactions.index') }}" :active="request()->routeIs('transactions')">
+            <x-jet-responsive-nav-link href="{{ route('transactions.index') }}" :active="request()->routeIs('transactions')">
                 {{ __('Transactions') }}
             </x-jet-responsive-nav-link>
         </div>

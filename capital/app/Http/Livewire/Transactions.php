@@ -15,6 +15,7 @@ class Transactions extends Component
     public $sortBy = 'id';
     public $sortAsc = true;
     public $confirmingTransactionDeletion = false;
+
     protected $queryString = [
         'active' => ['except' => false],
         'searchText' => ['except' => ''],

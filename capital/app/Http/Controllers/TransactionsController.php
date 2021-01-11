@@ -14,7 +14,11 @@ class TransactionsController extends Controller
      */
     public function index()
     {
-        //
+        //Get All Transactions
+        $transactions = Transactions::paginate(5);
+
+        // dd($transactions);
+        return view('transactions.index', ['transactions' => $transactions]);
     }
 
     /**
@@ -46,7 +50,7 @@ class TransactionsController extends Controller
      */
     public function show(Transactions $transactions)
     {
-        //
+        //Show single transaction by ID
     }
 
     /**
