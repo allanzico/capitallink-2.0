@@ -33,6 +33,7 @@
 
             <!-- Page Content -->
             <main>
+                @include('partials.alerts')
                 {{ $slot }}
             </main>
         </div>

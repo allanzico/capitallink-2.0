@@ -16,7 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+
         $users = User::all();
         return view('admin.users.index')->with('users', $users);
     }
@@ -85,7 +85,14 @@ class UsersController extends Controller
         $user->roles()->sync($request->roles);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->save();
+
+        if ($user->save()) {
+            $request->session()->flash('success', $user->name . ' details have been updated');
+        } else {
+            $request->session()->flash('error', 'There was an error updating ');
+        }
+
+
 
         return redirect()->route('users.index');
     }

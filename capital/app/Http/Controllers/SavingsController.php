@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Savings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class SavingsController extends Controller
 {
@@ -14,7 +15,7 @@ class SavingsController extends Controller
      */
     public function index()
     {
-        //
+
         $savings = Savings::all();
         return view('savings.index', compact('savings'));
     }

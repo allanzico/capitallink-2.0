@@ -17,20 +17,14 @@ use Laravel\Jetstream\Http\Controllers\Inertia\UserProfileController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified', 'auth.member'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('savings', SavingsController::class);
-
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'middleware' => 'auth.member'], function () {
     Route::resource('savings', SavingsController::class);
     Route::resource('users', UsersController::class);
 });
-
-// Route::namespace('Admin')->prefix('admin')->name('admin')->middleware('can:manage-users')->group(function () {
-//     Route::resource('users', UsersController::class, ['except' => ['show', 'create', 'store']]);
-// });
