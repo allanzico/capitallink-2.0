@@ -12,4 +12,8 @@ class Savings extends Model
     protected $fillable = [
         'description'
     ];
+    public function user()
+    {
+        $this->belongsTo(User::class);
+    }
 }
