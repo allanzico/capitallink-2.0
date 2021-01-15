@@ -6,10 +6,10 @@ use App\Models\Savings;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ViewSharedServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
@@ -27,5 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
 
+        $savings = Savings::with('users')->get();
+        View::share('savings', $savings);
     }
 }

@@ -15,9 +15,9 @@ class CreateSavingsTable extends Migration
     {
         Schema::create('savings', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date');
-            $table->integer('price');
-            $table->string('notes');
+            $table->date('subscription_date');
+            $table->integer('amount');
+            $table->string('notes')->nullable();
             $table->bigInteger('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->bigInteger('subscription_type_id')->references('id')->on('subscription_type')->onDelete('cascade');
             $table->timestamps();

@@ -9,9 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Savings extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'description'
-    ];
+    protected $fillable = [];
     public function user()
     {
         $this->belongsTo(User::class);

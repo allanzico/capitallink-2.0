@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Savings;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
 class SavingsController extends Controller
@@ -28,7 +31,10 @@ class SavingsController extends Controller
     public function create()
     {
         //
-        return view('savings.create');
+        $users = User::all();
+        $subscriptions = DB::table('subscription_type')->get();
+        return view('savings.create')
+            ->with(['users' => $users, 'subscriptions' => $subscriptions]);
     }
 
     /**
@@ -37,13 +43,17 @@ class SavingsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
-        $validated = $request->validate([
-            'description' => 'required'
-        ]);
-        Savings::create($validated);
+        $savings = new Savings();
+        $savings->subscription_date = Carbon::parse(request('subscription_date'));
+        $savings->amount = request('subscriptionAmount');
+        $savings->user_id = request('savedBy');
+        $savings->subscription_type_id = request('subscriptionType');
+        $savings->notes = request('extraNotes');
+        $savings->save();
+
         return redirect()->route('savings.index');
     }
 
