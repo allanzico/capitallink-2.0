@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatSubscriptionTypeTable extends Migration
+class CreatSubscriptionTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreatSubscriptionTypeTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('subscription_type', function (Blueprint $table) {
+        Schema::create('subscription_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -28,7 +27,6 @@ class CreatSubscriptionTypeTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('subscription_type');
+        Schema::dropIfExists('subscription_types');
     }
 }

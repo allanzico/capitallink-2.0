@@ -47,10 +47,10 @@
                                                 {{ $saving->amount }}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                {{ $saving->savings_id}}
+                                                {{ $saving->user->name}}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                {{ $saving->subscription_type_id }}
+                                                {{ $saving->subscriptionType->name }}
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">

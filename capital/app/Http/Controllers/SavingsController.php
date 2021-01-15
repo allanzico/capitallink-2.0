@@ -32,7 +32,7 @@ class SavingsController extends Controller
     {
         //
         $users = User::all();
-        $subscriptions = DB::table('subscription_type')->get();
+        $subscriptions = DB::table('subscription_types')->get();
         return view('savings.create')
             ->with(['users' => $users, 'subscriptions' => $subscriptions]);
     }

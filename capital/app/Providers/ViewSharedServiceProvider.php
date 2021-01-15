@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\SavingsController;
 use App\Models\Savings;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -16,6 +17,12 @@ class ViewSharedServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->registerBindings();
+    }
+
+    public function registerBindings()
+    {
+        $this->app->singleton(SavingsController::class);
     }
 
     /**
@@ -27,7 +34,7 @@ class ViewSharedServiceProvider extends ServiceProvider
     {
         //
 
-        $savings = Savings::with('users')->get();
+        $savings = Savings::with(['user', 'subscriptionType'])->get();
         View::share('savings', $savings);
     }
 }
