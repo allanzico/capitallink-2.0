@@ -9,7 +9,7 @@
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
             @can('edit-users')
             <div class="block mb-8">
-                <a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add User</a>
+                <a href="#" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">Add New User</a>
             </div>
             @endcan
             <div class="flex flex-col">
