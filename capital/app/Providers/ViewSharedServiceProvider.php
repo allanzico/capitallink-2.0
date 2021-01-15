@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\Controllers\SavingsController;
 use App\Models\Savings;
+use App\Models\User;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,8 +34,9 @@ class ViewSharedServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
-        $savings = Savings::with(['user', 'subscriptionType'])->paginate(10);
+        $users = User::all();
+        $savings = Savings::with(['user', 'subscriptionType'])->paginate(2);
         View::share('savings', $savings);
+        View::share('users', $users);
     }
 }
