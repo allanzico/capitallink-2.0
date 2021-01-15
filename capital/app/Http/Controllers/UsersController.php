@@ -91,9 +91,6 @@ class UsersController extends Controller
         } else {
             $request->session()->flash('error', 'There was an error updating ');
         }
-
-
-
         return redirect()->route('users.index');
     }
 

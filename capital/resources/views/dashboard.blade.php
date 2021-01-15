@@ -7,9 +7,15 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @can('edit-savings')
+            <div class="block mb-8">
+                <div class="block mb-8">
+                    <a href="{{ route('savings.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add New</a>
+                </div>
+            </div>
+            @endcan
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="flex flex-col">
-
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -62,7 +68,7 @@
                                                         </a>
                                                     </button>
 
-                                                @can('edit-users')
+                                                @can('edit-savings')
 
                                                     <a href="{{ route('savings.edit', $saving->id) }}" class="text-gray-600 hover:text-gray-900 mb-2 mr-2">
                                                     <button>
@@ -70,15 +76,13 @@
                                                     </button>
                                                     </a>
                                                 @endcan
-                                                @can('delete-users')
+                                                @can('edit-savings')
                                                     <form class="inline-block" action="{{ route('savings.destroy', $saving) }}" method="POST" onsubmit="return confirm('Are you sure?');">
                                                         @csrf
                                                         {{ method_field("DELETE") }}
-
                                                             <button class="text-red-600 hover:text-red-900 mb-2 mr-2">
                                                                 <svg height="20" width="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                                             </button>
-
                                                     </form>
                                                 @endcan
 

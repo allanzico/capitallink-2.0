@@ -26,9 +26,9 @@
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Saved By</label>
                                 <div class="flex-shrink w-full inline-block relative">
                                     <select name="savedBy" class="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
-                                        {{-- @foreach ($users as $user)
+                                        @foreach ($users as $user)
                                         <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
 
                                 </div>
@@ -37,9 +37,9 @@
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Subscription type</label>
                                 <div class="flex-shrink w-full inline-block relative">
                                     <select name="subscriptionType" class="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
-                                       {{-- @foreach ($subscriptions as $subscription)
+                                       @foreach ($subscriptions as $subscription)
                                        <option value="{{ $subscription->id }}">{{ $subscription->name }}</option>
-                                       @endforeach --}}
+                                       @endforeach
                                     </select>
 
 
@@ -52,7 +52,7 @@
                                     <textarea name="extraNotes" class='bg-gray-100 rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white'></textarea>
                                 </div>
                                 <div class="flex justify-end">
-                                    <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Add Savings</button>
+                                    <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Update Savings</button>
                                 </div>
                             </div>
                         </div>
