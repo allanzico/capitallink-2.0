@@ -183,6 +183,9 @@
                                             </table>
                                         </div>
                                     </div>
+                                    <div class="mt-4">
+                                        {{ $savings->links() }}
+                                    </div>
                                 </div>
                         </main>
 
