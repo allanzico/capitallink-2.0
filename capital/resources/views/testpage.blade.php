@@ -5,33 +5,12 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <main class="flex-1 overflow-x-hidden overflow-y-auto ">
-                    <div class="container mx-auto px-6 py-8">
-
-
-                                <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ]
-  }
-  ```
--->
+<div class="py-12">
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+<main class="flex-1 overflow-x-hidden overflow-y-auto ">
+<div class="container mx-auto px-6 py-8">
 <div>
-
-
-
   <div class="mt-10 sm:mt-0">
 
       <div class="mt-5 md:mt-0 md:col-span-2">
@@ -180,16 +159,14 @@
                 Save
               </button>
             </div>
-          </div>
+         </div>
         </form>
-      </div>
+        </div>
+        </div>
+     </div>
     </div>
-  </div>
-
-
-                    </div>
-                </main>
-            </div>
-
-    </div>
+</main>
+</div>
+</div>
+</div>
 </x-app-layout>
