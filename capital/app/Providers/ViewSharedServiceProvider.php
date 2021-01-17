@@ -35,7 +35,7 @@ class ViewSharedServiceProvider extends ServiceProvider
     {
         //
         $users = User::all();
-        $savings = Savings::with(['user', 'subscriptionType'])->paginate(2);
+        $savings = Savings::with(['user', 'subscriptionType'])->paginate(5);
         View::share('savings', $savings);
         View::share('users', $users);
     }

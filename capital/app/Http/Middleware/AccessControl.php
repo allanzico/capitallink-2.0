@@ -22,7 +22,7 @@ class AccessControl
         if (!in_array('user', $role)) {
             return $next($request);
         } else {
-            return response()->view('partials.error_404');
+            return response()->view('partials.non_member');
         }
     }
 }

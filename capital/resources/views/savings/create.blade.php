@@ -28,11 +28,12 @@
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Saved By</label>
                             <div class="flex-shrink w-full inline-block relative">
                                 <select name="savedBy" class="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
-                                    @foreach ($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                    @endforeach
-                                </select>
-
+                                    <div class="w-full items-center flex">
+                                        @foreach ($users as $user)
+                                        <option class="mx-2 -mt-1  " value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </div>
+                          </select>
                             </div>
                         </div>
                         <div class='w-full md:w-full px-3 mb-6'>

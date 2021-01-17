@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SavingsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,12 @@ use Laravel\Jetstream\Http\Controllers\Inertia\UserProfileController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+Route::get('nonmember', function () {
+    return view('partials.non-member');
+})->name('nonmember');
+Route::get('test', function () {
+    return view('testpage');
+})->name('test');
 
 Route::middleware(['auth:sanctum', 'verified', 'auth.member'])->get('/dashboard', function () {
     return view('dashboard');
@@ -27,4 +34,5 @@ Route::middleware(['auth:sanctum', 'verified', 'auth.member'])->get('/dashboard'
 Route::group(['middleware' => 'auth', 'middleware' => 'auth.member'], function () {
     Route::resource('savings', SavingsController::class);
     Route::resource('users', UsersController::class);
+    // Route::resource('dashboard', DashboardController::class);
 });

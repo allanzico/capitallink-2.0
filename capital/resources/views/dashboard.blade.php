@@ -59,7 +59,7 @@
                                                 </div>
 
                                                 <div class="mx-5">
-                                                    <div class="text-gray-500 text-sm uppercase tracking-widest font-semibold">Members</div>
+                                                    <div class="text-gray-500 text-sm uppercase tracking-widest font-semibold">Cash at hand</div>
                                                     <h4 class="text-2xl font-semibold text-gray-700">{{ count($users) }}</h4>
 
                                                 </div>
