@@ -15,7 +15,7 @@
         </div>
         <div class="col-span-4 sm:col-span-3 mx-2">
             <label for="perpage" class="block text-sm font-medium text-gray-700">Per page</label>
-            <select wire:model="perPage" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <select wire:model="perPage" class="mt-1 block w-full py-2 px-4 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
               <option>5</option>
               <option>10</option>
               <option>20</option>
@@ -27,20 +27,18 @@
        {{-- export actions --}}
        <div class="flex flex-wrap">
         <div class="col-span-4 sm:col-span-3 mx-2">
-            <label for="country" class="block text-sm font-medium text-gray-700">Country / Region</label>
-            <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
-            </select>
-        </div>
-        <div class="col-span-4 sm:col-span-3 mx-2">
-            <label for="country" class="block text-sm font-medium text-gray-700">Country / Region</label>
-            <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              <option>United</option>
-              <option>Canada</option>
-              <option>Mexico</option>
-            </select>
+
+             <div class="pt-5">
+                <a href="#">
+                    <button class="hover:bg-green-200 hover:text-green-800 group flex items-center rounded-md bg-green-100 text-green-600 text-sm font-medium px-4 py-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <span class="mx-1 font-bold">
+                            PDF
+                        </span>
+                    </button>
+                 </a>
+
+              </div>
         </div>
        </div>
 
