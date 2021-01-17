@@ -19,4 +19,12 @@ class Savings extends Model
     {
         return $this->belongsTo(SubscriptionType::class);
     }
+
+    public function scopeSearch($query, $val)
+    {
+        return $query
+            ->join('users', 'users.id', '=', 'savings.user_id')
+            ->where('users.name', 'like', '%' . $val . '%')
+            ->Orwhere('amount', 'like', '%' . $val . '%');
+    }
 }
