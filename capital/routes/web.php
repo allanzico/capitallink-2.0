@@ -26,6 +26,8 @@ Route::get('nonmember', function () {
 Route::get('test', function () {
     return view('testpage');
 })->name('test');
+Route::get('allSavings', [SavingsController::class, 'getSavings'])->name('getSavings');
+Route::get('downloadPDF', [SavingsController::class, 'downloadPDF'])->name('downloadPDF');
 
 Route::middleware(['auth:sanctum', 'verified', 'auth.member'])->get('/dashboard', function () {
     return view('dashboard');
@@ -33,6 +35,7 @@ Route::middleware(['auth:sanctum', 'verified', 'auth.member'])->get('/dashboard'
 
 Route::group(['middleware' => 'auth', 'middleware' => 'auth.member'], function () {
     Route::resource('savings', SavingsController::class);
+    Route::resource('getSavings', SavingsController::class);
     Route::resource('users', UsersController::class);
     // Route::resource('dashboard', DashboardController::class);
 });

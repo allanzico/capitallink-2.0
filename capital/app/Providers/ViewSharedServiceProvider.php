@@ -34,8 +34,10 @@ class ViewSharedServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+        // $users = User::all();
+        // $savings = Savings::with(['user', 'subscriptionType'])->paginate(5);
         // View::share('savings', $savings);
         // View::share('users', $users);
+
     }
 }

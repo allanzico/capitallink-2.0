@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Barryvdh\DomPDF\Facade as PDF;
+
+
 
 class SavingsController extends Controller
 {
@@ -138,5 +141,23 @@ class SavingsController extends Controller
         //
         $savings->delete();
         return redirect()->route('savings.index');
+    }
+
+    public function getSavings()
+    {
+        $users = User::all();
+        $subscriptions = SubscriptionType::all();
+        $savings = Savings::with(['user', 'subscriptionType'])->get();
+        return view('partials.savingsPdf')->with([
+            'users' => $users,
+            'savings' => $savings,
+            'subscriptions' => $subscriptions
+        ]);
+    }
+    public function downloadPDF()
+    {
+        $savings = Savings::all();
+        $pdf = PDF::loadView('partials.savingsPdf', compact('savings'));
+        return $pdf->download('savings.pdf');
     }
 }
