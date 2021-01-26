@@ -156,7 +156,7 @@ class SavingsController extends Controller
     }
     public function downloadPDF()
     {
-        $savings = Savings::all();
+        $savings = Savings::with(['user', 'subscriptionType'])->get();
         $pdf = PDF::loadView('partials.savingsPdf', compact('savings'));
         return $pdf->download('savings.pdf');
     }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SavingsController;
 use App\Http\Controllers\UsersController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Inertia\UserProfileController;
 
@@ -26,8 +27,8 @@ Route::get('nonmember', function () {
 Route::get('test', function () {
     return view('testpage');
 })->name('test');
-Route::get('allSavings', [SavingsController::class, 'getSavings'])->name('getSavings');
-Route::get('downloadPDF', [SavingsController::class, 'downloadPDF'])->name('downloadPDF');
+Route::get('allSavings', [SavingsController::class, 'getSavings'])->Middleware('auth')->name('getSavings');
+Route::get('downloadPDF', [SavingsController::class, 'downloadPDF'])->Middleware('auth')->name('downloadPDF');
 
 Route::middleware(['auth:sanctum', 'verified', 'auth.member'])->get('/dashboard', function () {
     return view('dashboard');
@@ -37,5 +38,4 @@ Route::group(['middleware' => 'auth', 'middleware' => 'auth.member'], function (
     Route::resource('savings', SavingsController::class);
     Route::resource('getSavings', SavingsController::class);
     Route::resource('users', UsersController::class);
-    // Route::resource('dashboard', DashboardController::class);
 });
